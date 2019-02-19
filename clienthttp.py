@@ -29,7 +29,7 @@ class ClientWeb(object):
         #Descargarme html
         html = self.descargar_html()
         #buscar activitats
-        activitats = buscar_activitats(html)
+        activitats = self.buscar_activitats(html)
         #imprimir resultat
 
 
