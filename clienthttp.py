@@ -9,7 +9,7 @@ class ClientWeb(object):
 
     def descargar_html(self):
         f = urlopen("http://www.eps.udl.cat/ca/")
-        html= f.read()
+        html = f.read()
         f.close()
         return html
 
