@@ -10,14 +10,17 @@ class Client_Web(object):
         pass
 
     def download_html_page(self):
-        html_file = urlopen("https://www.packtpub.com//packt/offers//free-learning")
-        html_file.read()
-        html_file.close()
-        return html_file
+        file = urlopen("https://www.packtpub.com//packt/offers//free-learning")
+        html= file.read()
+        file.close()
+        return html
 
     def search_relevant_information(self,html_file):
-        tree = bs4.BeautifulSoup(html_file)
-        print ( tree. prettify() )
+        tree = bs4.BeautifulSoup(html_file,features="lxml")
+        information=tree.find_all("div","respoPage") #Imposible conseguir datos
+        print(information)
+
+
 
     def run(self):
         html = self.download_html_page()

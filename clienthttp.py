@@ -23,7 +23,7 @@ class ClientWeb(object):
             link = activity.find("a")
             activity_list.append((title.text,link["href"]))
             print(link.text)
-        return activitats_list
+        return activity_list
 
     def run(self):
         #Descargarme html
