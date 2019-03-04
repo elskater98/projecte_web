@@ -36,10 +36,10 @@ class Client_Web(object):
 
     def print_product_information(self, list_product, list_prices):
 
-        for i in range(len(list_prices)):
-            print("TITLE: ", list_product[i],
-                  "\nCURRENT PRICE: ", list_prices[i][0],
-                  "\nOLD PRICE: ",list_prices[i][1])
+        for index in range(len(list_prices)):
+            print("TITLE: ", list_product[index],
+                  "\nCURRENT PRICE: ", list_prices[index][0],
+                  "\nOLD PRICE: ",list_prices[index][1])
             print("\n")
 
 
