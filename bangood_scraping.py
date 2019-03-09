@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from urllib.request import urlopen
 import bs4
 
@@ -30,7 +31,11 @@ class Client_Web(object):
         price_items = tree.find_all("div", "priceitem")
 
         for price in price_items:
-            list_prices.append((price.find("span","price").text,price.find("span","price_old").text))
+            # Avegades pot haver-hi productes que no tenen preu antic, suposem que mai pot haver-hi un preu actual a None.
+            if price.find("span","price_old") is None:
+                list_prices.append((price.find("span", "price").text, "None"))
+            else:
+                list_prices.append((price.find("span","price").text,price.find("span","price_old").text))
 
         return list_prices
 
